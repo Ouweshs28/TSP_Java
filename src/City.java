@@ -49,9 +49,10 @@ public class City {
 
         return distance;
     }
-
-
-
+    @Override
+    public String toString(){
+        return getxCoordinate()+", "+getyCoordinate();
+    }
     void printCity(){
         System.out.println("Position: "+postion+" ,X-Coordinate: "+xCoordinate+ " ,Y-Coordinate: "+yCoordinate);
     }
