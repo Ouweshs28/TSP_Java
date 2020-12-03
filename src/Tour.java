@@ -91,7 +91,7 @@ public class Tour{
     public String toString() {
         String geneString = "|";
         for (int i = 0; i < tourSize(); i++) {
-            geneString += getCity(i)+"|";
+            geneString += getCity(i).getPostion()+"|";
         }
         return geneString;
     }
