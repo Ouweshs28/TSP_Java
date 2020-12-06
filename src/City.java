@@ -41,12 +41,12 @@ public class City {
         yCoordinate=y;
     }
 
-    // Gets the distance to given city
-    public double distanceTo(City city){
-        int xDistance = Math.abs(getxCoordinate() - city.getxCoordinate());
-        int yDistance = Math.abs(getyCoordinate() - city.getyCoordinate());
-        double distance = Math.sqrt( (xDistance*xDistance) + (yDistance*yDistance) );
-
+    public double distanceFrom(City city) {
+// Give difference in x,y
+        double deltaXSq = Math.pow((city.getxCoordinate() - this.getxCoordinate()), 2);
+        double deltaYSq = Math.pow((city.getyCoordinate() - this.getyCoordinate()), 2);
+// Calculate shortest path
+        double distance = Math.sqrt(Math.abs(deltaXSq + deltaYSq));
         return distance;
     }
     @Override
