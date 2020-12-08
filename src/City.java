@@ -1,44 +1,27 @@
+/**
+ * City class
+ */
 public class City {
     private int postion;
+    private int xCoordinate;
+    private int yCoordinate;
+
+    public City(int pos,int x,int y){
+        postion=pos;
+        xCoordinate=x;
+        yCoordinate=y;
+    }
 
     public int getPostion() {
         return postion;
-    }
-
-    public void setPostion(int postion) {
-        this.postion = postion;
     }
 
     public int getxCoordinate() {
         return xCoordinate;
     }
 
-    public void setxCoordinate(int xCoordinate) {
-        this.xCoordinate = xCoordinate;
-    }
-
     public int getyCoordinate() {
         return yCoordinate;
-    }
-
-    public void setyCoordinate(int yCoordinate) {
-        this.yCoordinate = yCoordinate;
-    }
-
-    private int xCoordinate;
-    private int yCoordinate;
-
-    public City() {
-        this.postion=0;
-        this.xCoordinate=0;
-        this.yCoordinate=0;
-
-    }
-
-    public City(int pos,int x,int y){
-        postion=pos;
-        xCoordinate=x;
-        yCoordinate=y;
     }
 
     public double distanceFrom(City city) {
@@ -53,7 +36,5 @@ public class City {
     public String toString(){
         return getxCoordinate()+", "+getyCoordinate();
     }
-    void printCity(){
-        System.out.println("Position: "+postion+" ,X-Coordinate: "+xCoordinate+ " ,Y-Coordinate: "+yCoordinate);
-    }
+
 }

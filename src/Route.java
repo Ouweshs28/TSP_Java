@@ -7,6 +7,12 @@ public class Route {
 
     private City route[];
     private double distance = 0;
+
+    /**
+     * Calcilates the route
+     * @param individual
+     * @param cities
+     */
     public Route(Individual individual, ArrayList <City>cities) {
 // Get individual's chromosome
         int chromosome[] = individual.getChromosome();
@@ -16,6 +22,11 @@ public class Route {
             this.route[geneIndex] = cities.get(chromosome[geneIndex]);
         }
     }
+
+    /**
+     * Calculates the total distance of the route
+     * @return
+     */
     public double getDistance() {
         if (this.distance > 0) {
             return this.distance;

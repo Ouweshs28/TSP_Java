@@ -1,10 +1,23 @@
+/**
+ * Individual Class
+ */
 public class Individual {
     private int[] chromosome;
     private double fitness = -1;
+
+    /**
+     *
+     * @param chromosome
+     */
     public Individual(int[] chromosome) {
 // Create individual chromosome
         this.chromosome = chromosome;
     }
+
+    /**
+     *
+     * @param chromosomeLength
+     */
     public Individual(int chromosomeLength) {
 // Create random individual
         int[] individual;
@@ -33,6 +46,12 @@ public class Individual {
     public double getFitness() {
         return this.fitness;
     }
+
+    /**
+     * Checks if it contains the gene
+     * @param gene
+     * @return
+     */
     public boolean containsGene(int gene) {
         for (int i = 0; i < this.chromosome.length; i++) {
             if (this.chromosome[i] == gene) {

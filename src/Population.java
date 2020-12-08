@@ -1,6 +1,5 @@
 import java.util.Arrays;
 import java.util.Comparator;
-import java.util.Random;
 
 public class Population {
     private Individual population[];
@@ -8,6 +7,7 @@ public class Population {
     public Population(int populationSize) {
         this.population = new Individual[populationSize];
     }
+
     public Population(int populationSize, int chromosomeLength) {
         this.population = new Individual[populationSize];
         for (int individualCount = 0; individualCount <
@@ -20,6 +20,7 @@ public class Population {
     public Individual[] getIndividuals() {
         return this.population;
     }
+
     public Individual getFittest(int offset) {
         Arrays.sort(this.population, new Comparator<Individual>() {
             @Override
@@ -34,6 +35,22 @@ public class Population {
         });
         return this.population[offset];
     }
+
+    /**
+     * Method to calculate the average fitness
+     * @return
+     */
+    public double getAvgFitness(){
+        if (this.populationFitness == -1) {
+            double totalFitness = 0;
+            for (Individual individual : population) {
+                totalFitness += individual.getFitness();
+            }
+            this.populationFitness = totalFitness;
+        }
+        return populationFitness / this.size();
+    }
+
     public void setPopulationFitness(double fitness) {
         this.populationFitness = fitness;
     }
@@ -46,17 +63,5 @@ public class Population {
     public Individual setIndividual(int offset, Individual individual) {
         return population[offset] = individual;
     }
-    public Individual getIndividual(int offset) {
-        return population[offset];
-    }
 
-    public void shuffle() {
-        Random rnd = new Random();
-        for (int i = population.length - 1; i > 0; i--) {
-            int index = rnd.nextInt(i + 1);
-            Individual a = population[index];
-            population[index] = population[i];
-            population[i] = a;
-        }
-    }
 }
