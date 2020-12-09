@@ -8,7 +8,7 @@ public class TSP_CW {
         // Initial GA
         Stopwatch stopwatch= new Stopwatch();
         System.out.println("Algorithm Started");
-        GeneticAlgorithm ga = new GeneticAlgorithm(200, 0.01, 0.9, 2, 5);
+        GeneticAlgorithm ga = new GeneticAlgorithm(200, 0.004, 0.9, 2, 5);
         // Initialize population
         Population population = ga.initPopulation(cities.size());
         // set cooling rate
