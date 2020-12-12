@@ -12,20 +12,21 @@ public class FileManagement {
 
 
     public void getFile(String filename) {
-        File songfile = new File(filename);
+        File tspfile = new File(filename);
         try {
-            scan = new Scanner(songfile);
+            scan = new Scanner(tspfile);
         } catch (FileNotFoundException e) {
             System.out.println("File not found");
             System.exit(0);
         }
     }
 
-    /**
-     * @param filename takes the file path
-     * @return HashST Song library to be used
-     */
 
+    /**
+     * Takes the file name as argument and stores all cities in an arraylist
+     * @param filename
+     * @return
+     */
     public ArrayList<City> readFile(String filename) {
         getFile(filename);
         ArrayList<City> cities=new ArrayList<City>();
