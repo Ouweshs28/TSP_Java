@@ -24,6 +24,11 @@ public class City {
         return yCoordinate;
     }
 
+    /**
+     * Method to calculate the distance between two points
+     * @param city
+     * @return
+     */
     public double distanceFrom(City city) {
 // Give difference in x,y
         double deltaXSq = Math.pow((city.getxCoordinate() - this.getxCoordinate()), 2);

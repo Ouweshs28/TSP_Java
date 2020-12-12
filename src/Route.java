@@ -9,7 +9,7 @@ public class Route {
     private double distance = 0;
 
     /**
-     * Calcilates the route
+     * Calculates the route
      * @param individual
      * @param cities
      */

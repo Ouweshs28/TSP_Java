@@ -21,11 +21,12 @@ public class FileManagement {
         }
     }
 
-    /**
-     * @param filename takes the file path
-     * @return HashST Song library to be used
-     */
 
+    /**
+     * Takes the file name as argument and stores all cities in an arraylist
+     * @param filename
+     * @return
+     */
     public ArrayList<City> readFile(String filename) {
         getFile(filename);
         ArrayList<City> cities=new ArrayList<City>();

@@ -1,10 +1,14 @@
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class TSP_CW {
     public static int maxGenerations = 4000;
     public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        System.out.print("Enter your file name, make sure it is in project folder: ");
+        String cityFileName=scan.next();
         FileManagement cityFile = new FileManagement();
-        ArrayList<City> cities = cityFile.readFile("TSP4-18.txt");
+        ArrayList<City> cities = cityFile.readFile(cityFileName);
         // Initial GA
         Stopwatch stopwatch= new Stopwatch();
         System.out.println("Algorithm Started");
